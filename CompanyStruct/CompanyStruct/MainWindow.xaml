@@ -1,0 +1,32 @@
+﻿<Window x:Class="CompanyStruct.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompanyStruct"
+        mc:Ignorable="d"
+        Title="Structure of the Company" Height="350" Width="525">
+    <Grid>
+        <TextBox x:Name="FIO" HorizontalAlignment="Left" Height="20" Margin="5,5,0,0" TextWrapping="Wrap" Text="Введите ФИО сотрудника" VerticalAlignment="Top" Width="250" TextAlignment="Center"/>
+        <TextBox x:Name="Capacity" HorizontalAlignment="Left" Height="20" Margin="5,55,0,0" TextWrapping="Wrap" Text="Введите должность сотрудника" VerticalAlignment="Top" Width="250" TextAlignment="Center"/>
+        <TextBox x:Name="Salary" HorizontalAlignment="Left" Height="20" Margin="5,80,0,0" TextWrapping="Wrap" Text="Введите зарплату сотрудника" VerticalAlignment="Top" Width="250" TextAlignment="Center"/>
+        <ComboBox x:Name="Departament"
+                    HorizontalAlignment="Left"
+                    Margin="5,30,0,0"
+                    VerticalAlignment="Top"
+                    Width="250" 
+                    SelectionChanged = "comboBox_SelectionChanged"
+                    IsEditable="True"
+                    IsReadOnly="True"
+                    SelectedIndex="0"
+                    HorizontalContentAlignment="Center">
+            <ComboBoxItem>Выберите департамент сотрудника</ComboBoxItem>
+            <ComboBoxItem>Управление</ComboBoxItem>
+            <ComboBoxItem>IT</ComboBoxItem>
+            <ComboBoxItem>Бухгалтерия</ComboBoxItem>
+            <ComboBoxItem>Кадровое ДП</ComboBoxItem>
+            <ComboBoxItem>Рабочий класс</ComboBoxItem>
+        </ComboBox>
+
+    </Grid>
+</Window>
