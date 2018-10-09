@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CompanyStruct"
         mc:Ignorable="d"
-        Title="Structure of the Company" Height="350" Width="525">
+        Title="Structure of the Company" Height="350" Width="1000">
     <Grid>
         <TextBox x:Name="FIO" HorizontalAlignment="Left" Height="20" Margin="5,5,0,0" TextWrapping="Wrap" Text="Введите ФИО сотрудника" VerticalAlignment="Top" Width="250" TextAlignment="Center"/>
         <TextBox x:Name="Capacity" HorizontalAlignment="Left" Height="20" Margin="5,55,0,0" TextWrapping="Wrap" Text="Введите должность сотрудника" VerticalAlignment="Top" Width="250" TextAlignment="Center"/>
@@ -27,6 +27,36 @@
             <ComboBoxItem>Кадровое ДП</ComboBoxItem>
             <ComboBoxItem>Рабочий класс</ComboBoxItem>
         </ComboBox>
+        <ListView x:Name="lvEmployee" Margin="0,120,0,0" IsSynchronizedWithCurrentItem="False" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="ФИО" Width="300" 
+                                    DisplayMemberBinding="{Binding Name}"/>
 
+                    <GridViewColumn Header="Департамент" Width="200" 
+                                    DisplayMemberBinding="{Binding Departament}"  />
+
+                    <GridViewColumn Header="Должность" Width="300" 
+                                    DisplayMemberBinding="{Binding Capacity}" />
+
+                    <GridViewColumn Header="Зарплата" Width="170" 
+                                    DisplayMemberBinding="{Binding Salary}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListBox x:Name="listEmployee" HorizontalAlignment="Left" Height="170" Margin="0,140,0,0" VerticalAlignment="Top">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" Width="300"/>
+                        <TextBlock Text="{Binding Departament}" Width="200"/>
+                        <TextBlock Text="{Binding Capacity}" Width="300"/>
+                        <TextBlock Text="{Binding Salary}" Width="170"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="addWorker" Content="Добавить" HorizontalAlignment="Left" Margin="285,5,0,0" VerticalAlignment="Top" Width="119" Height="47" Click="addWorker_Click"/>
+        <Button x:Name="deleteWorker" Content="Удалить" HorizontalAlignment="Left" Height="43" Margin="285,57,0,0" VerticalAlignment="Top" Width="119" Click="deleteWorker_Click"/>
     </Grid>
 </Window>
